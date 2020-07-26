@@ -27,7 +27,7 @@ class XMLmms:
         for txt in texts:
             sms = doc.createElement("sms")
             #toa="null" sc_toa="null" service_center="null" read="1" status="-1" locked="0" date_sent="0" readable_date="Sep 27, 2012 10:57:55 AM" contact_name="Kevin Donlon"
-            sms.setAttribute("address", str(txt.num))
+            sms.setAttribute("address", (txt.num).encode('utf-8'))
             sms.setAttribute("date", str(txt.date))
             sms.setAttribute("type", str(txt.incoming+1))
             sms.setAttribute("body", txt.body)
